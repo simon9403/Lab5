@@ -2,7 +2,8 @@ library(Lab5)
 library(httr)
 context("API response")
 
-test_that("function is correct to response the input calling", {
-  resp <- google_api("address=1600+Amphitheatre+Parkway,+Mountain+View,+CA")
-  expect_output(http_type(resp), "application/json")
-})
+test_that("API returned json", {
+  expect_equal(http_type((google_api("address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"))$response), "application/json")
+  expect_equal(class(google_api("address=1600+Amphitheatre+Parkway,+Mountain+View,+CA")),"google_api_class")
+  expect_equal((google_api("address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"))$response$status_code ,200)
+  })
