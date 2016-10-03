@@ -1,13 +1,15 @@
 Package: Lab5
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Google Maps API
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Zhendong Wang
+Maintainer: Zhendong Wang <zhewa383@student.liu.se>
+Description: In this package, you can input some information to google_api() function to get the response of Google Geocoding.
+License: NULL
 LazyData: TRUE
-Suggests: testthat,
+Suggests:
+    testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1

@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Google API"
+author: "Zhendong Wang"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -27,32 +27,25 @@ The `html_vignette` template includes a basic CSS theme. To override this theme 
       rmarkdown::html_vignette:
         css: mystyles.css
 
-## Figures
+## Examples
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+The `google_api` function is used to create an object in class `google_api_class`, which owns four attributes: content, address, query, response. 
 
 ```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+library(httr)
+library(jsonlite)
+example <-Lab5::google_api("Eiffel+Tower,Paris")
+example$address
+example$url
+
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Also, you could use `google_api()` function to print all the information it contains.
+```{r}
+Lab5::google_api("Summer+Palace,Beijing")
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
 ```
 
-Also a quote using `>`:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+> "Google_API."([source](https://developers.google.com/maps/documentation/geocoding/intro))
